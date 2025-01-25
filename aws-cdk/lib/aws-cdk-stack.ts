@@ -10,11 +10,11 @@ export class AwsCdkStack extends cdk.Stack {
 
     // example resource
     const lambda = new cdk.aws_lambda.Function(this, 'MyFunction', {
-      runtime: cdk.aws_lambda.Runtime.NODEJS_18_X,
+      runtime: cdk.aws_lambda.Runtime.NODEJS_20_X,
       handler: 'index.handler',
       code: cdk.aws_lambda.Code.fromAsset(path.join(__dirname, '../../nodejs-restapi'),{
         bundling:{
-          image: cdk.aws_lambda.Runtime.NODEJS_18_X.bundlingImage,
+          image: cdk.aws_lambda.Runtime.NODEJS_20_X.bundlingImage,
           // network: 'host',
           command: [
             'bash', '-c', [
